@@ -8,12 +8,8 @@ namespace DecisionSystem.Controllers
     [Route("[controller]")]
     public class TestController : Controller
     {
-        /*[HttpGet("Index")]
-        public IActionResult Index()
-        {
-            return View();
-        }*/
         private readonly DecisionSystemDbContext _context;
+
         public TestController(DecisionSystemDbContext context)
         {
             _context = context;
@@ -25,21 +21,36 @@ namespace DecisionSystem.Controllers
             var analysts = await _context.Analyst.ToListAsync();
             var customers = await _context.Customer.ToListAsync();
             var products = await _context.Product.ToListAsync();
-            //var productPlacements = await _context.ProductPlacementsToListAsync();
             var carts = await _context.Cart.ToListAsync();
-            //var recommendations = await _context.Recommendations.ToListAsync();
+            var cartItems = await _context.CartItem.ToListAsync();
+            var categories = await _context.Category.ToListAsync();
+            var productsCategories = await _context.ProductsCategories.ToListAsync();
+            var productRatings = await _context.ProductRating.ToListAsync();
+            var purchases = await _context.Purchase.ToListAsync();
+            var purchaseItems = await _context.PurchaseItem.ToListAsync();
             var productManagers = await _context.ProductManager.ToListAsync();
+            var productAnalysis = await _context.ProductAnalys.ToListAsync();
+            var archiveProductAnalysis = await _context.ArchiveProductsAnalys.ToListAsync();
+            var analysisReports = await _context.AnalysReport.ToListAsync();
 
             return Ok(new
             {
                 Analysts = analysts,
                 Customers = customers,
                 Products = products,
-                //ProductPlacements = productPlacements,
                 Carts = carts,
-                //Recommendations = recommendations,
-                ProductManagers = productManagers
+                CartItems = cartItems,
+                Categories = categories,
+                ProductsCategories = productsCategories,
+                ProductRatings = productRatings,
+                Purchases = purchases,
+                PurchaseItems = purchaseItems,
+                ProductManagers = productManagers,
+                ProductAnalysis = productAnalysis,
+                ArchiveProductAnalysis = archiveProductAnalysis,
+                AnalysisReports = analysisReports
             });
         }
     }
+
 }

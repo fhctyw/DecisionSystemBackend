@@ -1,12 +1,10 @@
 ﻿namespace DecisionSystem.Models
 {
-    public class Analyst
+    public class AnalysFactor
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public decimal Weight { get; set; }
+        public bool IsImplemented { get; set; }
     }
-
-
 }

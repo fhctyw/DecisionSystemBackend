@@ -1,8 +1,9 @@
 ﻿namespace DecisionSystem.Models
 {
-    public class Cart
+    public class AnalysReport
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
+        public DateTime Date { get; set; }
     }
+
 }

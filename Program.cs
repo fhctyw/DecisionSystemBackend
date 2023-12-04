@@ -1,5 +1,6 @@
-using DecisionSystem.Data;
+﻿using DecisionSystem.Data;
 using Microsoft.EntityFrameworkCore;
+using DecisionSystem.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
